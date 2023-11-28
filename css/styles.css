@@ -4,6 +4,8 @@
     --primario: #FFC107;
     --secundario: #0097A7;
     --gris: #757575;
+    --grisclaro: #c3c3c5;
+    --gristenue:#0001
 
 
 }
@@ -12,22 +14,206 @@
 
 html {
     font-size: 62.5%;
+    /*para quitar el box model de HTML*/
+    box-sizing: border-box;
 }
+    /*para quitar el box model de HTML
+    Selecciona todos los elementos del HTML
+    y hace que el pading  se agregue pero que el size del
+    elemento se acorte, de esta manera el elemento total siempre mantendrá un tamaño adecuado
+     */
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+
 
 body{
     font-size: 16px; /* 1 rem = 10px */
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /*font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+    background-image: linear-gradient(to top, gray 0%, var(--blanco) 100%);
+
 }
 
-
-.titulo {
+h1{
+    font-size: 3.8;
+}
+h2{
+    font-size: 2.8;
+}
+h3{
+    font-size: 1.8;
+}
+h1,h2,h3{
     text-align: center;
-    font-size: 3.8rem;
-    font-weight: 400;}
+    color: var(--oscuro);
+}
 
 .titulo span{
     font-size: 2rem;
 }
 
+.contenedor{
+    max-width: 80rem;
+    margin: 0 auto 0 auto ;
+
+}
+
+
+.boton{
+background-color: var(--secundario);
+color: var(--blanco);
+padding: 1rem 2rem 1rem 2rem; /* 4 valores en sentido horario*/
+margin-top: 1rem; /*para separa del elemento de arriba 10 pixeles*/
+
+text-decoration: none ;/*para quitar la linea de abajo del enlace*/
+font-size: 1.5rem;
+text-transform: uppercase;
+font-weight: bold;
+border-radius: 0.5rem;
+width: 30%;
+text-align: center;
+
+
+
+
+}
+
+@media (min-width: 768px){
+    .boton{
+        width: auto
+    }
+}
+
+.sombra{
+    -webkit-box-shadow: 10px 14px 22px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 14px 22px -3px rgba(0,0,0,0.75);
+    box-shadow: 10px 14px 22px -3px rgba(0,0,0,0.75);
+    background-color: var(--grisclaro);
+    padding: 2rem;
+    border-radius:1rem ;
+
+}
+.nav_bag {
+    background-color: var(--gris);
+}
+
+.navegacion_principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+@media (min-width: 768px ){
+    .navegacion_principal{
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+
+}
+.navegacion_principal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+
+
+}
+/*este selector se usa para que un objeto 
+tenga el color de fondo, con el pading podemos
+colorear todo el recuadro y no solo el link*/
+
+.navegacion_principal a:hover{
+    background-color: var(--grisclaro);
+    color: var(--oscuro);
+
+}
+
+/*ahora nos vamos a referir a la clase hero y contenido-hero
+de HTML(creadas por mi) para poner una imagen de fondo*/
+
+.hero {
+    background-image: url(../img/imagen/code_white.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    /*agregamos posicion relativa al padre para que el 
+    hijo pueda posicionarse en posicion absoluta*/
+    position: relative;
+    margin-bottom: 2rem;
+
+
+}
+/*El siguiente selector es para agregar un cuadro de sombra*/
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0,0,0,.50);
+    /*background-color: rgb(0 0 0 / 70%);*/
+    /*Las siguientes lineas hacen que el hijo 
+    abarque todo el espacio que proporciona el padre*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ .contenido-hero h2,
+ .contenido-hero p{
+    color: var(--blanco);
+ }
+
+ img {
+    width: 50px; /* ajusta el tamaño según tus necesidades */
+    height: auto;
+    fill: var(); /* color del borde */
+  }
+
+/*SERVICIOS: VAMOS A USAR CSSGRID porque podemos acomodar en 2 direcciones*/
+
+
+/*hacer un media query para que nuestra pagina sea responsive*/
+@media(min-width: 768px){
+    .servicios{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;/*para separar los frames que crea grid*/
+
+    }
+}
+
+/*Vamos a hacer fondos para los iconos*/
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.servicio h3{
+    color: var(--gris);
+
+}
+.servicio p{
+    line-height: 2;
+    color: black;
+    font-size:x-small;
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--silver);
+    border-radius: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
 
