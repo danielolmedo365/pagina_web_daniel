@@ -202,7 +202,7 @@ de HTML(creadas por mi) para poner una imagen de fondo*/
 .servicio p{
     line-height: 2;
     color: black;
-    font-size:x-small;
+    font-size:small;
     text-align: center;
 }
 
@@ -216,4 +216,55 @@ de HTML(creadas por mi) para poner una imagen de fondo*/
     justify-content: space-evenly;
 }
 
+/*CONTACTO*/
 
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%);/*Utilizar el valor mas pequeño entre 60 px o el 100% de la pantalla*/
+    margin: 0 auto; /*Usamos margin 0 auto para centrar el formulario ya que para este hijo no contamos flex*/
+    padding: 2rem;
+    border-radius: 1rem;
+
+
+}
+
+.formulario fieldset {
+    border: none;
+
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--blanco);
+
+}
+
+.contenedor-campos{
+
+}
+
+.campo{
+
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo input[type="text"]{
+    width: 100%;
+
+}
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
